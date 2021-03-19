@@ -1,2 +1,8 @@
-INSERT INTO burgers (burger_name)
-VALUES ("Big Mac", "Whopper", "Baconator", "Quarter Pounder");
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Big Mac", 0);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Whopper", 0);
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Baconator", 0);
