@@ -1,8 +1,8 @@
 {
   "name": "burger-app",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A burger devouring app!",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,8 +10,8 @@
     "type": "git",
     "url": "git+https://github.com/leon-luna-ray/didactic-disco.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["burgers"],
+  "author": "Ray Luna",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leon-luna-ray/didactic-disco/issues"
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/leon-luna-ray/didactic-disco#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "express-handlebars": "^5.2.1"
+    "express-handlebars": "^5.2.1",
+    "mysql": "^2.18.1"
   }
 }
