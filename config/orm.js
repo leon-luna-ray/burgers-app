@@ -12,25 +12,15 @@ const connection = require('./connection');
         cb(result);
       });
     },
-    insertOne: (table, cols, vals, cb) => {
-      const queryString = "INSERT INTO " + table;
-  
-      queryString += " (";
-      queryString += cols.toString();
-      queryString += ") ";
-      queryString += "VALUES (";
-      queryString += printQuestionMarks(vals.length);
-      queryString += ") ";
-  
-      console.log(queryString);
-  
-      connection.query(queryString, vals, function(err, result) {
-        if (err) {
-          throw err;
+    insertOne: (table, object, cb) => {
+      
+      connection.query(
+        'INSERT INTO burgers SET ?', object, 
+        (err, res) => {
+          if (err) throw err;
+          cb(res)
         }
-  
-        cb(result);
-      });
+      );
     },
 
     updateOne: function(table, objColVals, condition, cb) {
