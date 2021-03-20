@@ -1,6 +1,8 @@
 // Set up MySQL connection.
 const mysql = require('mysql');
 
+// Bug with password not populating from .env
+
 const connection = mysql.createConnection({
   host: 'localhost',
   port: 3306,
