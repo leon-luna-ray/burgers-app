@@ -9,6 +9,7 @@ router.get('/', (req, res) => {
     console.log(`
     📥 Get request recieved!
     `);
+    // res.render('index', {layout: main});
 
 });
 

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
@@ -15,7 +15,10 @@ app.use(express.json());
 // Handlebars
 const exphbs = require('express-handlebars');
 
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+// May need to change the file path with layouts
+app.engine('handlebars', exphbs({ 
+    layoutsDir: `${__dirname}/views/layouts`,
+    defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Import routes
