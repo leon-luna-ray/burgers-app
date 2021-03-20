@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<link rel="stylesheet" href="./assets/css/burger_style.css" type="text/css" />
+		<title>Eat Da Burger</title>
+
+	</head>
+	<body>
+		<!-- main.handlebars-->
+		<!-- {{{ body }}} -->
+
+		<!-- index.handlebars -->
+		
+		<h1>Eat Da Burger</h1>
+		<!-- burger-section -->
+		<h2>Burgers</h2>
+		<!-- burger-list -->
+		<ul>
+		<!-- {{#each burger}}
+			{{#unless devoured}}
+			{{> burger/burger-block devoured=true}}
+			{{/unless}}
+		{{/each}} -->
+		</ul>
+
+		<!-- devoured-section -->
+		<h2>Devoured</h2>
+		<!-- devoured-list -->
+		<ul>
+		<!-- {{#each burger}}
+			{{#if devoured}}
+			{{> burger/burger-block devoured=false}}
+			{{/if}}
+		{{/each}} -->
+		</ul>
+
+		<!-- order-section -->
+		<h2>Order a Burger</h2>
+		<form class="create-form">
+		<div class="form-group">
+			<label for="ca">Burger type:</label>
+			<input type="text" id="ca" name="name">
+		</div>
+		<button type="submit">Order Burger!</button>
+		</form>
+
+		<!-- frontend script -->
+		<script src="./assets/js/script.js"></script>
+
+	</body>
+</html>
