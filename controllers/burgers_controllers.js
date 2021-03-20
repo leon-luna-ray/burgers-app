@@ -6,7 +6,9 @@ const burger = require('../models/burger.js');
 
 // Routes
 router.get('/', (req, res) => {
-    console.log('📥 Get request recieved!');
+    console.log(`
+    📥 Get request recieved!
+    `);
 
 });
 
