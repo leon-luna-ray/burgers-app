@@ -26,6 +26,5 @@ app.use(routes);
 // Start server
 app.listen(PORT, () => {
     console.log(`
-    📡 The app is listening on PORT ${PORT}.
-    `)
+    📡 The app is listening on PORT ${PORT}.`)
 });
