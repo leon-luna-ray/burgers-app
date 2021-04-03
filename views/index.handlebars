@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../public/assets/css/burger_style.css">
+<link rel="stylesheet" href="assets/css/burger-style.css" />
 
 <div class="container center-align">
 
@@ -7,20 +7,23 @@
   </div>
 
   <div class="order-burger row">
-    <h2>Order a Burger</h2>
-    
-      <div class="order-input row">
-        <form class="col s12">
-          <div class="row">
-            <div class="input-field col s6">
-              <i class="material-icons prefix">mode_edit</i>
-              <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-              <label for="icon_prefix2">First Name</label>
-            </div>
+    <h2>Order</h2>
+
+    <div class="row">
+        <div class="row"> <!--recipe name input-field-->
+
+          <div class="input-field col s9">
+            <input value="" id="burger-input" type="text" class="validate" />
+            <label class="active">Burger</label>
           </div>
-        </form>
-        <a id="eat-btn" class="btn-medium green">Order</a>
-      </div> <!-- order-input -->
+
+          <div class="col s3"> <!--button-->
+            <a id="order-btn" class="btn-large green">Submit</a>
+          </div> <!--button-->
+
+        </div> <!--row-->
+      </div> <!--recipe name input-field-->
+
 
   </div> <!-- order-burger -->
 
@@ -53,3 +56,10 @@
   <a id="eat-btn" class="btn-large green">Eat Da Burger!</a>
 
 </div> <!-- container -->
+
+
+<!-- js -->
+<script src="assets/js/script.js"></script>
+
+<!-- Materialize JavaScript -->	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
