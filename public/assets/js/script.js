@@ -9,7 +9,8 @@ eatBtn.addEventListener('click', eatDaBurger);
 
 // Order the burger and add to burgers list
 function orderBurger() {
-    console.log(`🍔 ${burgerOrder} ordered!`)  
+    const burger = burgerOrder.value;
+    console.log(`ordered!`)  
 }; 
 
 // Eat burger and move to devoured
