@@ -1,5 +1,5 @@
 const express = require('express');
-const db = require('../models')
+// const db = require('../models')
 const router = express.Router();
 
 const burger = require('../models/burger.js');
@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
 });
 
 router.post('/api/burger', async (req, res) => {
-    const newBurger = req.body;
-    
+
+    const {burger, devoured} = req.body;
+
+    console.log(burger)
 })
 
 module.exports = router;

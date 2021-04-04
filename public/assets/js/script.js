@@ -4,17 +4,18 @@ const orderBtn = document.getElementById('order-btn');
 const eatBtn = document.getElementById('eat-btn');
 
 // Order the burger and add to burgers list
-orderBtn.addEventListener('click', event => {
-    event.preventDefault();
+orderBtn.addEventListener('click', (event) => {
 
-    const burgerOrdered = burgerOrder.value;
-    console.log(`${burger} ordered!`) 
+    event.preventDefault();
 
     fetch('/api/burger', {
         method: 'POST',
-        body: {
-          burger_name: burgerOrdered,
+        headers: {
+            'Content-Type': 'application/json/',
+        },
+        body: JSON.stringify({
+          burger_name: burgerOrder.value,
           devoured: false,
-        }
+        })
     });
 });
