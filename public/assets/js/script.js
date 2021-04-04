@@ -16,7 +16,7 @@ orderBtn.addEventListener('click', (event) => {
         },
         body: JSON.stringify({
           burger_name: burgerOrder.value,
-          devoured: false,
+          devoured: 0,
         }),
     }).then(res => {return res.json()
     }).then(data => {console.log(data)

@@ -2,8 +2,7 @@ const express = require('express');
 // const db = require('../models')
 const router = express.Router();
 
-
-const burgerDb = require('../models/burger.js');
+const burgers = require('../models/burger.js');
 
 
 // Routes
@@ -16,9 +15,17 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/api/burger', (req, res) => {
+router.post('/api/burger', async (req, res) => {
+    // Get data from front end and assign to variable
+    const {burger_name, devoured} = req.body;
+    const newOrder = await burgers.insertOne({
+        burger_name,
+        devoured, 
+    });
 
-    console.log(`${req.body.burger_name} order recived in the back!`)
+    console.log(`${burger_name} order recived in the back!`)
+
+    res.status(200);
 })
 
 module.exports = router;
