@@ -5,10 +5,8 @@ const eatBtn = document.getElementById('eat-btn');
 
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
+    console.log(`${burgerOrder.value} ordered!`);
 
-    const burger = burgerOrder.value;
-
-    console.log(`${burger} ordered!`);
     event.preventDefault();
     // fetch request is promise based, need to use async await, .then or .catch
     fetch('/api/burger', {
@@ -17,10 +15,10 @@ orderBtn.addEventListener('click', (event) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          burger_name: 'Big Mac',
+          burger_name: burgerOrder.value,
           devoured: false,
         }),
-    }).then(res => {console.log(res.json())
+    }).then(res => {return res.json()
     }).then(data => {console.log(data)
     }).catch(error => console.log('❌ Error'));
 
