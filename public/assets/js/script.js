@@ -14,17 +14,14 @@ orderBtn.addEventListener('click', (event) => {
     fetch('/api/burger', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json/'
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           burger_name: 'Big Mac',
           devoured: false,
         }),
-    })
-
-    // .then(res => {console.log(res.json())
-    // }).then(data => {
-    //     console.log(data)
-    // }).catch(error => console.log('❌ Error'));
+    }).then(res => {console.log(res.json())
+    }).then(data => {console.log(data)
+    }).catch(error => console.log('❌ Error'));
 
 }); // Order Burger
