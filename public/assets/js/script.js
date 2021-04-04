@@ -3,17 +3,21 @@ const burgerOrder = document.getElementById('burger-order');
 const orderBtn = document.getElementById('order-btn');
 const eatBtn = document.getElementById('eat-btn');
 
-// Event listeners
-orderBtn.addEventListener('click', orderBurger);
-eatBtn.addEventListener('click', eatDaBurger);
-
 // Order the burger and add to burgers list
-function orderBurger() {
-    const burger = burgerOrder.value;
-    console.log(`ordered!`)  
-}; 
+orderBtn.addEventListener('click', event => {
+    event.preventDefault();
 
-// Eat burger and move to devoured
-function eatDaBurger() {
-    console.log('✅ Burger Devoured!')
-};
+    const burger = burgerOrder.value;
+    console.log(`${burger} ordered!`) 
+
+    fetch('/api/burger', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: {
+          buger_name: burger,
+          devoured: false,
+        }
+    });
+});

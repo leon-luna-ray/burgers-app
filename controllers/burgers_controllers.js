@@ -14,4 +14,10 @@ router.get('/', (req, res) => {
 
 });
 
+router.post('/api/burger', async (req, res) => {
+
+    const newBurger = req.body.burger_name;
+    console.log(`${newBurger} post request successful!`)
+})
+
 module.exports = router;
