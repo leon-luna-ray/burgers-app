@@ -1,4 +1,5 @@
-// Buttons
+// Input and buttons
+const burgerOrder = document.getElementById('burger-order');
 const orderBtn = document.getElementById('order-btn');
 const eatBtn = document.getElementById('eat-btn');
 
@@ -8,7 +9,7 @@ eatBtn.addEventListener('click', eatDaBurger);
 
 // Order the burger and add to burgers list
 function orderBurger() {
-    console.log('🍔 Burger ordered!')  
+    console.log(`🍔 ${burgerOrder} ordered!`)  
 }; 
 
 // Eat burger and move to devoured

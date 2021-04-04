@@ -13,7 +13,7 @@
         <div class="row"> <!--recipe name input-field-->
 
           <div class="input-field col s9">
-            <input value="" id="burger-input" type="text" class="validate" />
+            <input value="" id="burger-order" type="text" class="validate" />
             <label class="active">Burger</label>
           </div>
 
@@ -30,7 +30,7 @@
   <div class="burger-board row">
     <div class="ordered-burgers col s6">
       <h2>Burgers</h2>
-        <span class="material-icons md-48">lunch_dining</span>
+
       <ul>
         {{#each burger}}
           {{#unless devoured}}
