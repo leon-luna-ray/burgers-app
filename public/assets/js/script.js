@@ -6,6 +6,7 @@ const eatBtn = document.getElementById('eat-btn');
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
 
+    console.log(burgerOrder.value);
     event.preventDefault();
 
     fetch('/api/burger', {
