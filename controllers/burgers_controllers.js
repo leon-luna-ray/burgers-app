@@ -2,7 +2,7 @@ const express = require('express');
 // const db = require('../models')
 const router = express.Router();
 
-const burger = require('../models/burger.js');
+const burgerDb = require('../models/burger.js');
 
 // Routes
 // This will need to hit the database to get info to hand to handlebars
@@ -16,9 +16,9 @@ router.get('/', (req, res) => {
 
 router.post('/api/burger', async (req, res) => {
 
-    const {burger, devoured} = req.body;
+    const {burgerOrdered, devoured} = await req.body;
 
-    console.log(burger)
+    console.log(`${burgerOrdered} order recived in the back!`)
 })
 
 module.exports = router;
