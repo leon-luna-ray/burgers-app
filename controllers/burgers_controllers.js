@@ -11,7 +11,16 @@ router.get('/', (req, res) => {
     console.log(`
     📥 Get request recieved!
     `);
-    res.render('index');
+
+    burgers.selectAll(data => {
+        const hbsObject = {
+          burgers: data
+        };
+
+        console.log(hbsObject,                                            )
+
+        res.render("index", hbsObject);
+      });
 
 });
 
@@ -22,8 +31,16 @@ router.post('/api/burger', async (req, res) => {
         burger_name,
         devoured, 
     }, (res) => {
-        res.json()
-    });
+        return res.json();
+    }).then(data => {
+        console.log(data)
+    }).catch(
+        error => {
+            if(error){ 
+                console.log('ERROR!')
+            }
+        }
+    );
 
     console.log(`${burger_name} order recived in the back!`)
 
