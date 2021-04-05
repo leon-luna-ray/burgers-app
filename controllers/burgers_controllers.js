@@ -18,9 +18,11 @@ router.get('/', (req, res) => {
 router.post('/api/burger', async (req, res) => {
     // Get data from front end and assign to variable
     const {burger_name, devoured} = req.body;
-    const newOrder = await burgers.insertOne({
+    burgers.insertOne({
         burger_name,
         devoured, 
+    }, (res) => {
+        res.json()
     });
 
     console.log(`${burger_name} order recived in the back!`)
