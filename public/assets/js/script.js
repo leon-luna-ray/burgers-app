@@ -31,7 +31,9 @@ orderBtn.addEventListener('click', (event) => {
           burger_name: burgerOrder.value,
           devoured: false,
         }),
-    }).then(res => {console.log(res)
+    }).then(res => {
+        console.log(res);
+        location.reload();
     }).catch(error => console.log('❌ Error', error));
 
 }); // Order Burger
