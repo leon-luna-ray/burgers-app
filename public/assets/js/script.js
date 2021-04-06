@@ -33,6 +33,7 @@ orderBtn.addEventListener('click', (event) => {
         }),
     }).then(res => {
         console.log(res);
+        // reload page on add
         location.reload();
     }).catch(error => console.log('❌ Error', error));
 

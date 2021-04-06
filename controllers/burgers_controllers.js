@@ -31,8 +31,7 @@ router.post('/api/burger', (req, res) => {
         devoured, 
     }, (result) => {
         // res.json(result);
-        console.log(result)
-        res.redirect('/')
+        res.redirect('/');
     })
 
     console.log(`${burger_name} order recived in the back!`)
