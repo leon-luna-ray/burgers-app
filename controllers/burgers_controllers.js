@@ -14,35 +14,30 @@ router.get('/', (req, res) => {
 
     burgers.selectAll(data => {
         const hbsObject = {
-          burgers: data
+          burger: data
         };
-                             
+        
+        console.log(hbsObject)
         res.render("index", hbsObject);
       });
 
 });
 
-router.post('/api/burger', async (req, res) => {
+router.post('/api/burger', (req, res) => {
     // Get data from front end and assign to variable
     const {burger_name, devoured} = req.body;
     burgers.insertOne({
         burger_name,
         devoured, 
-    }, (res) => {
-        return res.json();
-    }).then(data => {
-        console.log(data)
-    }).catch(
-        error => {
-            if(error){ 
-                console.log('ERROR!')
-            }
-        }
-    );
+    }, (result) => {
+        // res.json(result);
+        console.log(result)
+        res.redirect('/')
+    })
 
     console.log(`${burger_name} order recived in the back!`)
 
-    res.status(200);
+    // res.status(200);
 })
 
 module.exports = router;

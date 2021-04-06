@@ -1,7 +1,20 @@
 // Input and buttons
 const burgerOrder = document.getElementById('burger-order');
 const orderBtn = document.getElementById('order-btn');
-const eatBtn = document.getElementById('eat-btn');
+const eatBtns = document.querySelectorAll('.burger-order');
+
+
+eatBtns.forEach(button => {
+    console.log(button)
+    button.addEventListener('click', (event) => {
+        event.preventDefault();
+
+        const devoured = button.getAttribute('data-devoured');
+        console.log(devoured);
+        
+    })
+});
+
 
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
@@ -16,10 +29,9 @@ orderBtn.addEventListener('click', (event) => {
         },
         body: JSON.stringify({
           burger_name: burgerOrder.value,
-          devoured: 0,
+          devoured: false,
         }),
-    }).then(res => {return res.json()
-    }).then(data => {console.log(data)
-    }).catch(error => console.log('❌ Error'));
+    }).then(res => {console.log(res)
+    }).catch(error => console.log('❌ Error', error));
 
 }); // Order Burger

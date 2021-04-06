@@ -34,7 +34,7 @@
       <ul>
         {{#each burger}}
           {{#unless devoured}}
-            {{> burger/burger-block devoured=true}}
+            {{> burger-orders devoured=true}}
           {{/unless}}
         {{/each}}
       </ul>
@@ -46,14 +46,12 @@
       <ul>
         {{#each burger}}
           {{#if devoured}}
-            {{> burger/burger-block devoured=false}}
+            {{> burger-orders devoured=false}}
           {{/if}}
         {{/each}}
       </ul>
     </div> <!-- devoured-burgers -->
   </div> <!-- burger-board -->
-
-  <a id="eat-btn" class="btn-large green">Eat Da Burger!</a>
 
 </div> <!-- container -->
 
