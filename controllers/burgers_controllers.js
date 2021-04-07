@@ -1,14 +1,9 @@
 const express = require('express');
-// const db = require('../models')
 const router = express.Router();
-
 const burgers = require('../models/burger.js');
 
-
 // Routes
-// This will need to hit the database to get info to hand to handlebars
 router.get('/', (req, res) => {
-
     // Select all data from the model and assign the values to a variable.
     burgers.selectAll(data => {
         const hbsObject = {
@@ -30,7 +25,6 @@ router.post('/api/burger', (req, res) => {
         devoured, 
     }, () => {
         // Redirect to home page
-       
         res.redirect('/');
     })
 });
@@ -38,16 +32,12 @@ router.post('/api/burger', (req, res) => {
 router.put('/api/burger/:id', (req, res) => {
     const condition = req.params.id;
     const devoured = req.body.devoured;
-    console.log(req.body.devoured)
     
     burgers.updateOne({
         devoured,
     }, condition, () => {
-
         res.redirect('/')
     })
 });
-
-
 
 module.exports = router;

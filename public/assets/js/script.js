@@ -3,13 +3,15 @@ const burgerOrder = document.getElementById('burger-order');
 const orderBtn = document.getElementById('order-btn');
 const eatBtns = document.querySelectorAll('.burger-order');
 
-
+// Loop through to add click event to each button
 eatBtns.forEach(function(button) {
-
     button.addEventListener('click', function(event) {
         event.preventDefault();
 
+        // Id from each button
         const id = button.getAttribute('data-id');
+
+        // Handlebars set the state automatically on render, this will then update that value in db on click
         const newState = button.getAttribute('data-devoured');
 
         fetch(`/api/burger/${id}`, 
@@ -22,12 +24,12 @@ eatBtns.forEach(function(button) {
               devoured: newState,
             }),
         }).then(() => {
+            // reaload page
             location.reload();
         }).catch(error => console.log('❌ Error', error));
         
     })
 });
-
 
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
@@ -47,5 +49,4 @@ orderBtn.addEventListener('click', (event) => {
         // reload page on add
         location.reload();
     }).catch(error => console.log('❌ Error', error));
-
 }); // Order Burger
