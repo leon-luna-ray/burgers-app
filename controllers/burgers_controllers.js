@@ -37,12 +37,16 @@ router.post('/api/burger', (req, res) => {
 
 router.put('/api/burger/:id', (req, res) => {
     const condition = req.params.id;
+
+    const devoured = req.body.devoured;
     
     burgers.updateOne({
-        devoured: false,
+        devoured,
     }, condition, result => {
         // code left off here
-        console.log('from inside the burger controller put requyest')
+        console.log(`from inside the burger controller put requyest: ${result}`)
+
+        res.redirect('/')
     })
 });
 

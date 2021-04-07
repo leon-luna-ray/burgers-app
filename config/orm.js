@@ -25,8 +25,10 @@ const connection = require('./connection');
 
     updateOne: function(table, object, condition, cb) {
       
-      const queryString = `UPDATE burgers SET devoured = ${object.devoured} WHERE id = '${condition}'`
+      const queryString = `UPDATE ${table} SET devoured = ${object.devoured} WHERE id = '${condition}'`
 
+      console.log(object);
+      
       console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
