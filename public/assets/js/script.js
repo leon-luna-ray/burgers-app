@@ -11,10 +11,21 @@ eatBtns.forEach(function(button) {
 
         const devoured = button.getAttribute('data-devoured');
         const id = button.getAttribute('data-id');
-        console.log(devoured);
-        console.log(id);
 
-        // fetch('/api/burger/')
+        fetch(`/api/burger/${id}`, 
+        {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              devoured: false,
+            }),
+        }).then((response) => {
+            response.json()
+        }).then(data => {
+            console.log(`Success! ${data}`)
+        }).catch(error => console.log('❌ Error', error));
         
     })
 });

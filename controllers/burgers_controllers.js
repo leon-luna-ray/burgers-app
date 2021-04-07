@@ -36,8 +36,34 @@ router.post('/api/burger', (req, res) => {
 });
 
 router.put('/api/burger/:id', (req, res) => {
-    const devoured = req.params.devoured;
+    const condition = req.params.devoured;
     console.log(devoured);
+
+    burgers.updateOne({
+        devoured: false,
+    }, condition, result => {
+        // code left off here
+    })
+
+    // Update from orm
+    // updateOne: function(table, objColVals, condition, cb) {
+    //     const queryString = "UPDATE " + table;
+    
+    //     queryString += " SET ";
+    //     queryString += objToSql(objColVals);
+    //     queryString += " WHERE ";
+    //     queryString += condition;
+    
+    //     console.log(queryString);
+    //     connection.query(queryString, function(err, result) {
+    //       if (err) {
+    //         throw err;
+    //       }
+    
+    //       cb(result);
+    //     });
+    //   }
+    // };
 });
 
 
