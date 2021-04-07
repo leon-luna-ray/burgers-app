@@ -4,13 +4,17 @@ const orderBtn = document.getElementById('order-btn');
 const eatBtns = document.querySelectorAll('.burger-order');
 
 
-eatBtns.forEach(button => {
-    console.log(button)
-    button.addEventListener('click', (event) => {
+eatBtns.forEach(function(button) {
+
+    button.addEventListener('click', function(event) {
         event.preventDefault();
 
         const devoured = button.getAttribute('data-devoured');
+        const id = button.getAttribute('data-id');
         console.log(devoured);
+        console.log(id);
+
+        // fetch('/api/burger/')
         
     })
 });
@@ -32,7 +36,7 @@ orderBtn.addEventListener('click', (event) => {
           devoured: false,
         }),
     }).then(res => {
-        console.log(res);
+        console.log(`res from script.js 35: ${res}`);
         // reload page on add
         location.reload();
     }).catch(error => console.log('❌ Error', error));
