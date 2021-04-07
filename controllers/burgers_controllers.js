@@ -37,17 +37,12 @@ router.post('/api/burger', (req, res) => {
 
 router.put('/api/burger/:id', (req, res) => {
     const condition = req.params.id;
-    let devoured = req.body.devoured;
-
-    if(devoured === true) {
-        console.log(`Inside if/else statemnt in controller`)
-    }
+    const devoured = req.body.devoured;
+    console.log(req.body.devoured)
     
     burgers.updateOne({
         devoured,
-    }, condition, result => {
-        // code left off here
-        
+    }, condition, () => {
 
         res.redirect('/')
     })

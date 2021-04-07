@@ -9,8 +9,8 @@ eatBtns.forEach(function(button) {
     button.addEventListener('click', function(event) {
         event.preventDefault();
 
-        const devoured = button.getAttribute('data-devoured');
         const id = button.getAttribute('data-id');
+        const newState = button.getAttribute('data-devoured');
 
         fetch(`/api/burger/${id}`, 
         {
@@ -19,7 +19,7 @@ eatBtns.forEach(function(button) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              devoured: devoured,
+              devoured: newState,
             }),
         }).then(() => {
             location.reload();
@@ -31,10 +31,9 @@ eatBtns.forEach(function(button) {
 
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
-    console.log(`${burgerOrder.value} ordered!`);
-
     event.preventDefault();
     // fetch request is promise based, need to use async await, .then or .catch
+
     fetch('/api/burger', {
         method: 'POST',
         headers: {
@@ -44,8 +43,7 @@ orderBtn.addEventListener('click', (event) => {
           burger_name: burgerOrder.value,
           devoured: false,
         }),
-    }).then(res => {
-        console.log(`res from script.js 35: ${res}`);
+    }).then(() => {
         // reload page on add
         location.reload();
     }).catch(error => console.log('❌ Error', error));

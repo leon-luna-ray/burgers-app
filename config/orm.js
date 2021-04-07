@@ -27,9 +27,6 @@ const connection = require('./connection');
       
       const queryString = `UPDATE ${table} SET devoured = ${object.devoured} WHERE id = '${condition}'`
 
-      console.log(object);
-      
-      console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
           throw err;
