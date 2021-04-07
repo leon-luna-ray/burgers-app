@@ -9,7 +9,7 @@ eatBtns.forEach(function(button) {
     button.addEventListener('click', function(event) {
         event.preventDefault();
 
-        const devoured = button.getAttribute('data-devoured');
+        const devoured = false;
         const id = button.getAttribute('data-id');
 
         fetch(`/api/burger/${id}`, 
@@ -19,7 +19,7 @@ eatBtns.forEach(function(button) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-              devoured: false,
+              devoured: devoured,
             }),
         }).then((response) => {
             response.json()

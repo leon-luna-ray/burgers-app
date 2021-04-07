@@ -24,46 +24,26 @@ router.get('/', (req, res) => {
 router.post('/api/burger', (req, res) => {
     // Get data from front end and assign to variable
     const {burger_name, devoured} = req.body;
-    console.log(`Devoured from post route: ${devoured}`)
+
     burgers.insertOne({
         burger_name,
         devoured, 
     }, () => {
         // Redirect to home page
-        console.log(`Devoured 2 from post route: ${devoured}`)
+        console.log()
         res.redirect('/');
     })
 });
 
 router.put('/api/burger/:id', (req, res) => {
-    const condition = req.params.devoured;
-    console.log(devoured);
-
+    const condition = req.params.id;
+    
     burgers.updateOne({
         devoured: false,
     }, condition, result => {
         // code left off here
+        console.log('from inside the burger controller put requyest')
     })
-
-    // Update from orm
-    // updateOne: function(table, objColVals, condition, cb) {
-    //     const queryString = "UPDATE " + table;
-    
-    //     queryString += " SET ";
-    //     queryString += objToSql(objColVals);
-    //     queryString += " WHERE ";
-    //     queryString += condition;
-    
-    //     console.log(queryString);
-    //     connection.query(queryString, function(err, result) {
-    //       if (err) {
-    //         throw err;
-    //       }
-    
-    //       cb(result);
-    //     });
-    //   }
-    // };
 });
 
 

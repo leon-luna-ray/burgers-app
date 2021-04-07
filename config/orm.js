@@ -23,14 +23,10 @@ const connection = require('./connection');
       );
     },
 
-    updateOne: function(table, objColVals, condition, cb) {
-      const queryString = "UPDATE " + table;
-  
-      queryString += " SET ";
-      queryString += objToSql(objColVals);
-      queryString += " WHERE ";
-      queryString += condition;
-  
+    updateOne: function(table, object, condition, cb) {
+      
+      const queryString = `UPDATE burgers SET devoured = ${object.devoured} WHERE id = '${condition}'`
+
       console.log(queryString);
       connection.query(queryString, function(err, result) {
         if (err) {
