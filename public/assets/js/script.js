@@ -21,8 +21,8 @@ eatBtns.forEach(function(button) {
             body: JSON.stringify({
               devoured: devoured,
             }),
-        }).then((response) => {
-            console.log(response.json())
+        }).then(() => {
+            location.reload();
         }).catch(error => console.log('❌ Error', error));
         
     })
