@@ -1,0 +1,20 @@
+{
+    "development": {
+      "username": "tjs0o5hkuzimk82f",
+      "password": "zpq8819lek95iav6",
+      "database": "n18o6eytsde9qeou",
+      "host": "vkh7buea61avxg07.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      "dialect": "mysql"
+    },
+    "test": {
+      "username": "tjs0o5hkuzimk82f",
+      "password": "zpq8819lek95iav6",
+      "database": "burgers_db",
+      "host": "127.0.0.1",
+      "dialect": "mysql"
+    },
+    "production": {
+      "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
+    }
+  }
