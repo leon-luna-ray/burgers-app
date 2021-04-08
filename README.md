@@ -35,7 +35,7 @@
 
   ## Known-Bugs
 
-  No known bugs.
+  Possible bug in loading the database without seed data.
 
   ## Next-Steps
 
