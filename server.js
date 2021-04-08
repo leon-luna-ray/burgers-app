@@ -16,8 +16,7 @@ app.use(express.json());
 const exphbs = require('express-handlebars');
 
 // May need to change the file path with layouts
-app.engine('handlebars', exphbs({ 
-    defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Import routes
@@ -27,6 +26,7 @@ app.use(routes);
 
 // Start server
 app.listen(PORT, () => {
-    console.log(`
-    📡 The app is listening on PORT ${PORT}.`)
+  // eslint-disable-next-line no-console
+  console.log(`
+    📡 The app is listening on PORT ${PORT}.`);
 });
