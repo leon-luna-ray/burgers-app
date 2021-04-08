@@ -1,5 +1,6 @@
 const orm = require('../config/orm');
 
+// burger model with methods to select all, insert one and update one
 const burger = {
   selectAll: (cb) => {
     orm.selectAll('burgers', (res) => {

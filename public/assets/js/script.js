@@ -36,7 +36,6 @@ eatBtns.forEach((button) => {
 orderBtn.addEventListener('click', (event) => {
   event.preventDefault();
   // fetch request is promise based, need to use async await, .then or .catch
-
   fetch('/api/burger', {
     method: 'POST',
     headers: {

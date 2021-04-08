@@ -15,7 +15,6 @@ app.use(express.json());
 // Handlebars
 const exphbs = require('express-handlebars');
 
-// May need to change the file path with layouts
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 

@@ -1,36 +1,28 @@
 <link rel="stylesheet" href="assets/css/burger-style.css" />
 
 <div class="container center-align">
-
   <div class="title row">
     <h1>Eat Da Burger</h1>
   </div>
 
   <div class="order-burger row">
     <h2>Order</h2>
-
     <div class="row">
-        <div class="row"> <!--recipe name input-field-->
-
+        <div class="row"> 
           <div class="input-field col s9">
             <input value="" id="burger-order" type="text" class="validate" />
             <label class="active">Burger</label>
           </div>
-
           <div class="col s3"> <!--button-->
             <a id="order-btn" class="btn-large green">Submit</a>
           </div> <!--button-->
-
         </div> <!--row-->
-      </div> <!--recipe name input-field-->
-
-
+      </div> 
   </div> <!-- order-burger -->
 
   <div class="burger-board row">
     <div class="ordered-burgers col s6">
       <h2>Burgers</h2>
-
       <ul>
         {{#each burger}}
           {{#unless devoured}}
@@ -39,10 +31,8 @@
         {{/each}}
       </ul>
     </div> <!-- ordered-burgers -->
-
     <div class="devoured-burgers col s6">
       <h2>Devoured!</h2>
-
       <ul>
         {{#each burger}}
           {{#if devoured}}
@@ -52,12 +42,9 @@
       </ul>
     </div> <!-- devoured-burgers -->
   </div> <!-- burger-board -->
-
 </div> <!-- container -->
-
 
 <!-- js -->
 <script src="assets/js/script.js"></script>
-
 <!-- Materialize JavaScript -->	
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
