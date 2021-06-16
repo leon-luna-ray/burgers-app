@@ -14,27 +14,26 @@ eatBtns.forEach((button) => {
     // Handlebars will set the new state automatically on render
     const newState = button.getAttribute('data-devoured');
 
-    fetch(`/api/burger/${id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          devoured: newState,
-        }),
-      }).then(() => {
-      // reaload page
-      // eslint-disable-next-line no-restricted-globals
-      location.reload();
-    // eslint-disable-next-line no-console
-    }).catch((error) => console.log('❌ Error', error));
+    fetch(`/api/burger/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        devoured: newState,
+      }),
+    })
+      .then(() => {
+        // reload page
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
+        // eslint-disable-next-line no-console
+      })
+      .catch((error) => console.log('❌ Error', error));
   });
 });
 
-// Order the burger and add to burgers list
-orderBtn.addEventListener('click', (event) => {
-  event.preventDefault();
+function handleSubmit() {
   // fetch request is promise based, need to use async await, .then or .catch
   fetch('/api/burger', {
     method: 'POST',
@@ -45,10 +44,25 @@ orderBtn.addEventListener('click', (event) => {
       burger_name: burgerOrder.value,
       devoured: false,
     }),
-  }).then(() => {
-    // reload page on add
-    // eslint-disable-next-line no-restricted-globals
-    location.reload();
-  // eslint-disable-next-line no-console
-  }).catch((error) => console.log('❌ Error', error));
-}); // Order Burger
+  })
+    .then(() => {
+      // reload page on add
+      // eslint-disable-next-line no-restricted-globals
+      location.reload();
+      // eslint-disable-next-line no-console
+    })
+    .catch((error) => console.log('❌ Error', error));
+}
+
+// Order the burger and add to burgers list
+orderBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleSubmit();
+});
+
+burgerOrder.addEventListener('keypress', (event) => {
+  // event.preventDefault();
+  if (event.key === 'Enter') {
+    handleSubmit();
+  }
+});
