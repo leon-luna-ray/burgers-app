@@ -1,64 +1,64 @@
-
 # Eat-da-burger
 
-  ## Description
+## Description
 
-  A fun burger ordering app! The user can order any burger they like. The burger will be saved in their burger queque and moved to the devoured side when the user clicks eat-da-burger! This is a Heroku app build with node.js.
+A fun burger ordering app! The user can order any burger they like. The burger will be saved in their burger queque and moved to the devoured side when the user clicks eat-da-burger! This is a Heroku app build with node.js.
 
-  [🍔 Launch App](https://burger-app-rluna.herokuapp.com/) 
+[🍔 Launch App](https://burger-app-rluna.herokuapp.com/)
 
-  ## Table of Contents
+## Table of Contents
 
-  * [Image](#image)
-  * [Technologies](#technologies)
-  * [Known-Bugs](#known-bugs)
-  * [Next-Steps](#next-steps)
-  * [License](#license)
-  * [Contact](#contact)
-  * [Links](#links)
+- [Image](#image)
+- [Technologies](#technologies)
+- [Known-Bugs](#known-bugs)
+- [Next-Steps](#next-steps)
+- [License](#license)
+- [Contact](#contact)
+- [Links](#links)
 
-  ## Image
+## Image
 
-  ![Screenshot](./public/assets/img/eatdaburger.png)
+![Screenshot](./public/assets/img/eatdaburger.png)
 
-  ## Technologies
-  
-  * HTML
-  * CSS
-  * Javascript
-  * Node.js
-  * Express
-  * Handlebars
-  * MySQL
-  * JawsDB
-  * Heroku
+## Technologies
 
-  ## Known-Bugs
+- HTML
+- CSS
+- Javascript
+- Node.js
+- Express
+- Handlebars
+- MySQL
+- JawsDB
+- Heroku
+- Google Fonts
+- [Subtle Patterns](https://www.toptal.com/designers/subtlepatterns/) (Background Image)
 
-  Possible bug in loading the database without seed data.
+## Known-Bugs
 
-  ## Next-Steps
+Possible bug in loading the database without seed data.
 
-  * New styling/UI
-  * Delete burger option
+## Next-Steps
 
-  ## License
+- New styling/UI
+- Delete burger option
 
-  This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## License
 
-  ## Contact
+This project is licensed under the [MIT](https://opensource.org/licenses/MIT) license.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-  Author: Ray Luna 
+## Contact
 
-  If you have any questions about the repo, open an issue or contact me directly at:
-  - E-Mail: leon.luna.ray@gmail.com
-  - GitHub: [leon-luna-ray](https://github.com/leon-luna-ray)
+Author: Ray Luna
 
-  ## Links
+If you have any questions about the repo, open an issue or contact me directly at:
 
-  - [Deployed Project](https://burger-app-rluna.herokuapp.com/) 
+- E-Mail: leon.luna.ray@gmail.com
+- GitHub: [leon-luna-ray](https://github.com/leon-luna-ray)
 
-  - [Project Repository](https://github.com/leon-luna-ray/burgers-app/)
+## Links
 
-  
+- [Deployed Project](https://burger-app-rluna.herokuapp.com/)
+
+- [Project Repository](https://github.com/leon-luna-ray/burgers-app/)
