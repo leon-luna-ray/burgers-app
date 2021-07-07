@@ -5,24 +5,25 @@
     <h1 id='page-title'>Eat-Da-Burger</h1>
   </div>
 
-  <div class="order-burger row">
+  <div class="order-burger row card-panel yellow lighten-4"> <!-- order panel -->
     <h2>Order</h2>
     <div class="row">
         <div class="row"> 
           <div class="input-field col s9">
             <input value="" id="burger-order" type="text" class="validate" />
-            <label class="active">Burger</label>
+            <label class="active">Burger Order</label>
           </div>
           <div class="col s3"> <!--button-->
             <a id="order-btn" class="btn-large green">Submit</a>
           </div> <!--button-->
         </div> <!--row-->
       </div> 
-  </div> <!-- order-burger -->
+  </div> <!-- order-panel -->
 
-  <div class="burger-board row">
+  <div class="burger-board row card-panel yellow lighten-4">
     <div class="ordered-burgers col s6">
       <h2>Burgers</h2>
+      <br/>
       <ul>
         {{#each burger}}
           {{#unless devoured}}
@@ -33,6 +34,7 @@
     </div> <!-- ordered-burgers -->
     <div class="devoured-burgers col s6">
       <h2>Devoured!</h2>
+      <br/>
       <ul>
         {{#each burger}}
           {{#if devoured}}
