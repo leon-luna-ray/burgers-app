@@ -1,6 +1,7 @@
 // Input and buttons
 const burgerOrder = document.getElementById('burger-order');
 const orderBtn = document.getElementById('order-btn');
+const resetBtn = document.getElementById('resetBtn');
 const eatBtns = document.querySelectorAll('.burger-order');
 
 // Loop through to add click event to each button
@@ -54,10 +55,19 @@ function handleSubmit() {
     .catch((error) => console.log('❌ Error', error));
 }
 
+function handleReset() {
+  console.log('handle reset clicked!');
+}
+
 // Order the burger and add to burgers list
 orderBtn.addEventListener('click', (event) => {
   event.preventDefault();
   handleSubmit();
+});
+
+resetBtn.addEventListener('click', (event) => {
+  event.preventDefault();
+  handleReset();
 });
 
 burgerOrder.addEventListener('keypress', (event) => {
